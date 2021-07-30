@@ -51,8 +51,8 @@ for  (let i = 3; i<=7; i++){
     let newSection = document.createElement('section');
     fragment.appendChild(newSection);
     newSection.innerHTML = clonedSection.innerHTML
-    newSection.id = 'section'+i;
-    newSection.class =  'Section'+i;
+    newSection.id = 'section'+(i+1);
+    newSection.setAttribute("data-nav",'Section '+(i+1));
     newSection.getElementsByTagName('h2')[0].innerHTML = 'Section ' +(i+1)
 
 }
@@ -67,21 +67,20 @@ sectionContainer.appendChild(fragment);
 
 // build the nav
 
+
 const nav = document.querySelector('#navbar__list');
 const sections=document.getElementsByTagName("section");
-function createNav()
+function buildMenu()
 {
     for(let section of sections){
     let navItem=document.createElement("li")
-    navItem.innerText = 'hii';
-    navItem.className = 'nav_link';
+    navItem.className = "menu__link";
+    navItem.innerText = section.dataset.nav;
     nav.appendChild(navItem);
+    console.log(section)
     };
 }
-createNav()
-
-
-
+buildMenu()
 
 
 // Add class 'active' to section when near top of viewport

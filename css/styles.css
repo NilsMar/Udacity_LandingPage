@@ -67,22 +67,24 @@ section {
 .navbar__menu ul {
     padding-left: 0;
     margin: 0;
-    text-align: right;
+    display:flex ;
+    flex-direction:row;
+    flex-wrap:wrap;
+    justify-content :left;
 }
 
-.navbar__menu li {
-    display: inline-block;
+.main__hero .navbar__menu li {
+    margin: 2em;
 }
 
-.navbar__menu .menu__link {
-    display: block;
-    padding: 1em;
+.main__hero. navbar__menu .menu__link {
+    padding:  1m;
     font-weight: bold;
     text-decoration: none;
     color: #000;
 }
 
-.navbar__menu .menu__link:hover {
+.main__hero .navbar__menu .menu__link:hover {
     background: #333;
     color: #fff;
     transition: ease 0.3s all;

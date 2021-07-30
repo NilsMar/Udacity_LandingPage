@@ -13,20 +13,12 @@
  *
 */
 /*
-const navbarMenu = document.getElementById("navbar__list");
-//select sections
-const sections = document.querySelectorAll("section");
-//build a nav
-function createNav(){
-  for (let item of sections){
-    let section = document.createElement("li");
-    section.className = "menu__link";
-    section.innerText = item.dataset.nav;
-    navbarMenu.appendChild(section);
-
-  };
-};
-createNav();
+    newSection.addEventListener('click',scroll => {
+        newSection.scrollIntoView({
+            behavior:"smooth",
+            block:"start"
+        });
+    })
 /*
 /**
  * Define Global Variables
@@ -47,14 +39,13 @@ const fragment = document.createDocumentFragment();
 
 
 */
-for  (let i = 3; i<=7; i++){
+for  (let i = 3; i<=20; i++){
     let newSection = document.createElement('section');
     fragment.appendChild(newSection);
     newSection.innerHTML = clonedSection.innerHTML
     newSection.id = 'section'+(i+1);
     newSection.setAttribute("data-nav",'Section '+(i+1));
     newSection.getElementsByTagName('h2')[0].innerHTML = 'Section ' +(i+1)
-
 }
 
 sectionContainer.appendChild(fragment);
@@ -75,9 +66,19 @@ function buildMenu()
     for(let section of sections){
     let navItem=document.createElement("li")
     navItem.className = "menu__link";
+    navItem.setAttribute("data-link",section.dataset.nav.replace(" ","").toLowerCase())
     navItem.innerText = section.dataset.nav;
+    navItem.addEventListener("click",() =>{
+        let i = document.getElementById(navItem.getAttribute("data-link"))
+        i.scrollIntoView(
+        {
+            behavior: "smooth",
+            block:"center"
+
+        })
+        console.log(i)
+    })
     nav.appendChild(navItem);
-    console.log(section)
     };
 }
 buildMenu()
@@ -87,8 +88,7 @@ buildMenu()
 
 
 // Scroll to anchor ID using scrollTO event
-
-
+const links = document.querySelectorAll(".landing__container")
 /**
  * End Main Functions
  * Begin Events

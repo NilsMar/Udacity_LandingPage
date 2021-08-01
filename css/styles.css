@@ -73,6 +73,12 @@ section {
     justify-content :left;
 }
 
+.active{
+    font-weight: bold;
+    font-size: 20px;
+    color: red !important;
+}
+
 .main__hero .navbar__menu li {
     margin: 2em;
 }

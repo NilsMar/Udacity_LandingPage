@@ -13,13 +13,6 @@
  *
 */
 /*
-    newSection.addEventListener('click',scroll => {
-        newSection.scrollIntoView({
-            behavior:"smooth",
-            block:"start"
-        });
-    })
-/*
 /**
  * Define Global Variables
  *
@@ -32,11 +25,6 @@ const fragment = document.createDocumentFragment();
 
 /**
  * End Global Variables
-
-
- * Start Helper Functions
- *
-
 
 */
 
@@ -53,12 +41,6 @@ for  (let i = 3; i<=20; i++){
 sectionContainer.appendChild(fragment);
 
 
-
-/**
- * End Helper Functions
- * Begin Main Functions
- *
-*/
 
 // build the nav
 
@@ -89,8 +71,11 @@ function buildMenu()
 }
 buildMenu()
 
-for (let section of sections)
-{   let butn =  document.createElement("input");
+// Create buttons
+
+function createButtons(){
+for (let section of sections){
+   let butn =  document.createElement("input");
     butn.setAttribute('type','button');
     butn.setAttribute('name','button');
     butn.setAttribute('value','Go to nav');
@@ -105,8 +90,10 @@ for (let section of sections)
 
     }
     section.appendChild(butn)
+    }
 }
 
+createButtons()
 // Add class 'active' to section when near top of viewport
 
 function makeActive(){
@@ -127,17 +114,3 @@ document.addEventListener("scroll", function() {
   makeActive();
 });
 
-// Scroll to anchor ID using scrollTO event
-/**
- * End Main Functions
- * Begin Events
- *
-*/
-
-// Build menu
-
-// Scroll to section on link click
-
-// Set sections as active
-
-console.log(performance.now())

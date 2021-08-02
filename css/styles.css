@@ -60,6 +60,17 @@ section {
     min-height: 80vh;
 }
 
+input{
+    height: 40px;
+    display: none;
+}
+
+
+.activeButton{
+    display: inline-block;
+}
+
+
 
 /* ---- Module Rules ---- */
 
@@ -76,8 +87,9 @@ section {
 .active{
     font-weight: bold;
     font-size: 20px;
-    color: red !important;
+    border:  solid 2px white;
 }
+
 
 .main__hero .navbar__menu li {
     margin: 2em;

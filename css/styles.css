@@ -101,7 +101,7 @@ input{
     margin: 2em;
 }
 
-.main__hero. navbar__menu .menu__link {
+.main__hero .navbar__menu .menu__link {
     padding:  1m;
     font-weight: bold;
     text-decoration: none;
@@ -113,12 +113,7 @@ input{
     color: #fff;
     transition: ease 0.3s all;
 }
-.main__hero. navbar__menu .menu__link  {
-  padding:  1m;
-  font-weight: bold;
-  text-decoration: none;
-  color: #000;
-}
+
 
 /* Header Styles */
 .page__header {

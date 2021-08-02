@@ -39,6 +39,8 @@ const fragment = document.createDocumentFragment();
 
 
 */
+
+
 for  (let i = 3; i<=20; i++){
     let newSection = document.createElement('section');
     fragment.appendChild(newSection);
@@ -49,6 +51,8 @@ for  (let i = 3; i<=20; i++){
 }
 
 sectionContainer.appendChild(fragment);
+
+
 
 /**
  * End Helper Functions
@@ -61,6 +65,9 @@ sectionContainer.appendChild(fragment);
 
 const nav = document.querySelector('#navbar__list');
 const sections=document.getElementsByTagName("section");
+
+
+
 function buildMenu()
 {
     for(let section of sections){
@@ -76,19 +83,51 @@ function buildMenu()
             block:"center"
 
         })
-        console.log(i)
     })
     nav.appendChild(navItem);
-    };
+    }
 }
 buildMenu()
 
+for (let section of sections)
+{   let butn =  document.createElement("input");
+    butn.setAttribute('type','button');
+    butn.setAttribute('name','button');
+    butn.setAttribute('value','Go to nav');
+    butn.className = 'ButtonNot-active'
+    butn.onclick = function(){
+        nav.scrollIntoView(
+                {
+            behavior: "smooth",
+            block:"center"
+
+        })
+
+    }
+    section.appendChild(butn)
+}
 
 // Add class 'active' to section when near top of viewport
 
+function makeActive(){
+    for (let section of sections)
+    {
+        const box = section.getBoundingClientRect();
+        if (box.top <= 150 && box.bottom >= 150)
+            {
+                section.className = "active"
+           section.getElementsByTagName('input')[0].className = 'activeButton'
+    } else {
+        section.class = "not-active"
+    }
+  }
+}
+
+document.addEventListener("scroll", function() {
+  makeActive();
+});
 
 // Scroll to anchor ID using scrollTO event
-const links = document.querySelectorAll(".landing__container")
 /**
  * End Main Functions
  * Begin Events
@@ -101,4 +140,4 @@ const links = document.querySelectorAll(".landing__container")
 
 // Set sections as active
 
-
+console.log(performance.now())

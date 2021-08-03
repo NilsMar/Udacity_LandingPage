@@ -81,7 +81,7 @@ input{
 /* ---- Module Rules ---- */
 
 /* Navigation Styles*/
-.navbar__menu  ul {
+.main__hero .navbar__menu  ul {
     padding-left: 0;
     margin: 0;
     display:flex ;
@@ -94,7 +94,8 @@ input{
     font-weight: bold;
     font-size: 20px;
     border:  solid 2px white;
-}
+    background-color: orange;
+    }
 
 
 .main__hero .navbar__menu li {

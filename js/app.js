@@ -36,6 +36,8 @@ for  (let i = 3; i<=20; i++){
     newSection.id = 'section'+(i+1);
     newSection.setAttribute("data-nav",'Section '+(i+1));
     newSection.getElementsByTagName('h2')[0].innerHTML = 'Section ' +(i+1)
+    newSection.setAttribute("class","not-active")
+
 }
 
 sectionContainer.appendChild(fragment);
@@ -94,6 +96,7 @@ for (let section of sections){
 }
 
 createButtons()
+
 // Add class 'active' to section when near top of viewport
 
 function makeActive(){

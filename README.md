@@ -2,12 +2,17 @@
 
 ## Table of Contents
 
-* [Instructions](#instructions)
+* [Purpose](#Purpose)
+* [Interactivity](#Interactivity)
+* [Scope](#Scope)
 
-## Instructions
+## Purpose
+This is an interactive landing page. It creates a number of sections based on a parameter set insinde the app.js file. For each section created, a corresponding menu item will be created. T
 
-The starter project has some HTML and CSS styling to display a static version of the Landing Page project. You'll need to convert this project from a static project to an interactive one. This will require modifying the HTML and CSS files, but primarily the JavaScript file.
+## Interactivity
+Clicking on a section inside the navigation will sroll to the corresponding section on the landing page. Each section has "back to nav" button which scrolls back to the top of the landing page once clicked.
 
-To get started, open `js/app.js` and start building out the app's functionality
+## Scope
 
-For specific, detailed instructions, look at the project instructions in the Udacity Classroom.
+The project comrpises of 3 files. index.html, app.js & styles.css
+All are linked inside the index.html file

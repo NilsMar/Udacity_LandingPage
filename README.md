@@ -7,10 +7,10 @@
 * [Scope](#Scope)
 
 ## Purpose
-This is an interactive landing page. It creates a number of sections based on a parameter set insinde the app.js file. For each section created, a corresponding menu item will be created. T
+This is an interactive landing page. It creates a number of sections based on a parameter set insinde the app.js file. For each section created, a corresponding menu item will be created.
 
 ## Interactivity
-Clicking on a section inside the navigation will sroll to the corresponding section on the landing page. Each section has "back to nav" button which scrolls back to the top of the landing page once clicked.
+Clicking on a section inside the navigation will scroll to the corresponding section on the landing page. Each section has "back to nav" button which scrolls back to the top of the landing page once clicked.
 
 ## Scope
 

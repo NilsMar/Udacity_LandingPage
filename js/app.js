@@ -29,7 +29,7 @@ const fragment = document.createDocumentFragment();
 */
 
 
-for  (let i = 3; i<=20; i++){
+for  (let i = 3; i<=7; i++){
     let newSection = document.createElement('section');
     fragment.appendChild(newSection);
     newSection.innerHTML = clonedSection.innerHTML
@@ -108,7 +108,7 @@ function makeActive(){
                 section.className = "active"
            section.getElementsByTagName('input')[0].className = 'activeButton'
     } else {
-        section.class = "not-active"
+        section.className = "not-active"
     }
   }
 }

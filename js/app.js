@@ -21,6 +21,9 @@ const sectionContainer = document.getElementsByTagName('main')[0];
 let lastSection = document.getElementById('section3');
 const clonedSection = lastSection.cloneNode(true);
 const fragment = document.createDocumentFragment();
+const navMenu = document.getElementsByClassName('navbar__menu')[0];
+const topNav = navMenu.offsetTop;
+
 
 
 /**
@@ -105,15 +108,27 @@ function makeActive(){
         const box = section.getBoundingClientRect();
         if (box.top <= 150 && box.bottom >= 150)
             {
-                section.className = "active"
-           section.getElementsByTagName('input')[0].className = 'activeButton'
+                section.className = "active_section"
+                section.getElementsByTagName('input')[0].className = 'activeButton'
+
     } else {
         section.className = "not-active"
     }
   }
 }
 
+function stickyNav(){
+    if (topNav <= window.scrollY){
+        navMenu.classList.add("fix-nav")
+    }
+    else {
+    navMenu.classList.remove("fix-nav")
+    }
+}
+
 document.addEventListener("scroll", function() {
-  makeActive();
+  makeActive(), stickyNav();
 });
+
+
 

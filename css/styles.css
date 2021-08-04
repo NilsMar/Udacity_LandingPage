@@ -33,6 +33,8 @@ h1 {
     }
 }
 
+
+
 h2 {
     border-bottom: 1px solid #cc1;
     font-family: 'Oxygen', Sans-Serif;
@@ -54,6 +56,7 @@ main {
     min-height: 40vh;
     padding-top: 3em;
 }
+
 
 section {
     position: relative;
@@ -82,20 +85,30 @@ input{
 
 /* Navigation Styles*/
 .main__hero .navbar__menu  ul {
+    position: fixed;
+    width: 100%;
     padding-left: 0;
     margin: 0;
     display:flex ;
     flex-direction:row;
     flex-wrap:wrap;
     justify-content :left;
+    top: 0;
+    background-color: darkred;
+    z-index: 5;
+}
+.main__hero .navbar__menu.fix-nav ul {
+background-color: green;
 }
 
-.active{
+
+.active_section{
     font-weight: bold;
     font-size: 20px;
     border:  solid 2px white;
     background-color: orange;
     }
+
 
 
 .main__hero .navbar__menu li {
@@ -116,14 +129,16 @@ input{
 }
 
 
-/* Header Styles */
-.page__header {
-    background: #fff;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 5;
+
+
+.main__hero nav.navbar__menu.fix-nav  {
+
+    background-color: green;
 }
+
+
+/* Header Styles */
+
 
 /* Footer Styles */
 .page__footer {

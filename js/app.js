@@ -84,10 +84,10 @@ for (let section of sections){
    let butn =  document.createElement("input");
     butn.setAttribute('type','button');
     butn.setAttribute('name','button');
-    butn.setAttribute('value','Go to nav');
+    butn.setAttribute('value','Go to Section 1');
     butn.className = 'ButtonNot-active'
     butn.onclick = function(){
-        nav.scrollIntoView(
+        sections[0].scrollIntoView(
                 {
             behavior: "smooth",
             block:"center"
@@ -130,17 +130,9 @@ function makeActive(){
 
 
 
-function stickyNav(){
-    if (topNav <= window.scrollY){
-        navMenu.classList.add("fix-nav")
-    }
-    else {
-    navMenu.classList.remove("fix-nav")
-    }
-}
 
 document.addEventListener("scroll", function() {
-  makeActive(), stickyNav();
+  makeActive();
 });
 
 

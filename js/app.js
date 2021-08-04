@@ -26,6 +26,7 @@ const topNav = navMenu.offsetTop;
 
 
 
+
 /**
  * End Global Variables
 
@@ -102,6 +103,8 @@ createButtons()
 
 // Add class 'active' to section when near top of viewport
 
+const menuLinks = document.getElementsByClassName('menu__link')
+
 function makeActive(){
     for (let section of sections)
     {
@@ -110,12 +113,22 @@ function makeActive(){
             {
                 section.className = "active_section"
                 section.getElementsByTagName('input')[0].className = 'activeButton'
+                let activeId = document.querySelector('.active_section').id
+                for (link of menuLinks){
+                    if (activeId == link.getAttribute('data-link'))
+                        {link.classList.add('activeNav')}
+                    else{
+                        link.classList.remove('activeNav')
+                        }
+                }
 
     } else {
         section.className = "not-active"
     }
   }
 }
+
+
 
 function stickyNav(){
     if (topNav <= window.scrollY){
